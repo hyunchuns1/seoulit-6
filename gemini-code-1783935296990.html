@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DevType — 나만의 MBTI 검사</title>
+  <title>서현중.net — MBTI 성향 검사</title>
   <link rel="stylesheet" href="mbti.css" />
 </head>
 <body>
   <header class="nav">
     <div class="nav__inner">
-      <a href="index.html" class="nav__brand">DevType<span>.net</span></a>
+      <!-- 클릭 시 내 포트폴리오 홈으로 돌아가도록 경로 지정 -->
+      <a href="index.html" class="nav__brand">서현중<span>.net</span></a>
       <button id="themeToggle" class="theme-toggle" aria-label="테마 전환">🌙</button>
     </div>
   </header>
@@ -18,7 +19,7 @@
     <!-- 1. 시작 화면 -->
     <div id="start-screen" class="card-box text-center">
       <p class="greet-badge">간단한 12문항</p>
-      <h1 class="main-title">나의 성향 및 업무 스타일 <br>MBTI 분석</h1>
+      <h1 class="main-title">나의 성향 및 업무 스타일<br>MBTI 분석</h1>
       <p class="sub-desc">인프라와 코드, 그리고 협업 패턴을 통해 알아보는 나의 진짜 성향 분석 테스트를 시작해보세요.</p>
       <button id="start-btn" class="btn btn--primary">테스트 시작하기</button>
     </div>
@@ -32,11 +33,11 @@
         <span id="progress-text" class="progress-text">1 / 12</span>
       </div>
 
-      <h2 id="question-text" class="question-title">여기에 질문이 들어갑니다.</h2>
+      <h2 id="question-text" class="question-title">질문 로딩 중...</h2>
 
       <div class="options-group">
-        <button class="option-btn" data-score="1">첫 번째 답변 옵션문항입니다.</button>
-        <button class="option-btn" data-score="0">두 번째 답변 옵션문항입니다.</button>
+        <button class="option-btn" data-idx="0">첫 번째 답변 옵션</button>
+        <button class="option-btn" data-idx="1">두 번째 답변 옵션</button>
       </div>
     </div>
 
@@ -51,18 +52,20 @@
       <p class="greet-badge">당신의 분석 결과는</p>
       <h1 id="result-type" class="result-mbti">ESTJ</h1>
       <h3 id="result-title" class="result-headline">철저하고 체계적인 인프라 아키텍트</h3>
-      <p id="result-desc" class="result-body">결과에 대한 상세한 설명이 이곳에 들어갑니다. 성향, 장점, 어울리는 직무 스타일 등을 컴팩트하게 요약하여 보여줍니다.</p>
+      <p id="result-desc" class="result-body">결과 설명이 이곳에 배치됩니다.</p>
       
-      <div class="result-cta">
+      <div class="result-cta" style="display: flex; gap: 12px;">
         <button id="restart-btn" class="btn btn--ghost">다시 테스트하기</button>
+        <a href="index.html" class="btn btn--primary">포트폴리오 돌아가기</a>
       </div>
     </div>
   </main>
 
   <footer class="footer">
-    <p>© <span id="year"></span> DevType · All Rights Reserved</p>
+    <p>© <span id="year"></span> 서현중 · Portfolio</p>
   </footer>
 
-  <script src="mbti.js"></script>
+  <!-- 깃허브 배포 시 안정적인 실행을 위해 defer 속성을 추가합니다 -->
+  <script src="mbti.js" defer></script>
 </body>
 </html>
