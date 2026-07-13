@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DevType — 나만의 MBTI 검사</title>
+  <link rel="stylesheet" href="mbti.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">DevType<span>.net</span></a>
+      <button id="themeToggle" class="theme-toggle" aria-label="테마 전환">🌙</button>
+    </div>
+  </header>
+
+  <main class="section">
+    <!-- 1. 시작 화면 -->
+    <div id="start-screen" class="card-box text-center">
+      <p class="greet-badge">간단한 12문항</p>
+      <h1 class="main-title">나의 성향 및 업무 스타일 <br>MBTI 분석</h1>
+      <p class="sub-desc">인프라와 코드, 그리고 협업 패턴을 통해 알아보는 나의 진짜 성향 분석 테스트를 시작해보세요.</p>
+      <button id="start-btn" class="btn btn--primary">테스트 시작하기</button>
+    </div>
+
+    <!-- 2. 검사 진행 화면 (초기 숨김) -->
+    <div id="quiz-screen" class="card-box hidden">
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div id="progress-indicator" class="progress-bar__fill"></div>
+        </div>
+        <span id="progress-text" class="progress-text">1 / 12</span>
+      </div>
+
+      <h2 id="question-text" class="question-title">여기에 질문이 들어갑니다.</h2>
+
+      <div class="options-group">
+        <button class="option-btn" data-score="1">첫 번째 답변 옵션문항입니다.</button>
+        <button class="option-btn" data-score="0">두 번째 답변 옵션문항입니다.</button>
+      </div>
+    </div>
+
+    <!-- 3. 결과 로딩 화면 (초기 숨김) -->
+    <div id="loading-screen" class="card-box text-center hidden">
+      <div class="loading-spinner"></div>
+      <p class="loading-text">답변을 분석하여 성향 궤적을 연산하는 중입니다...</p>
+    </div>
+
+    <!-- 4. 결과 화면 (초기 숨김) -->
+    <div id="result-screen" class="card-box text-center hidden">
+      <p class="greet-badge">당신의 분석 결과는</p>
+      <h1 id="result-type" class="result-mbti">ESTJ</h1>
+      <h3 id="result-title" class="result-headline">철저하고 체계적인 인프라 아키텍트</h3>
+      <p id="result-desc" class="result-body">결과에 대한 상세한 설명이 이곳에 들어갑니다. 성향, 장점, 어울리는 직무 스타일 등을 컴팩트하게 요약하여 보여줍니다.</p>
+      
+      <div class="result-cta">
+        <button id="restart-btn" class="btn btn--ghost">다시 테스트하기</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> DevType · All Rights Reserved</p>
+  </footer>
+
+  <script src="mbti.js"></script>
+</body>
+</html>
